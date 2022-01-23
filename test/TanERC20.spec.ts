@@ -1,5 +1,5 @@
 import chai, { expect } from "chai";
-import { Contract, constants, utils, BigNumber } from "ethers";
+import { Contract, constants, utils } from "ethers";
 const { MaxUint256 } = constants;
 const { hexlify, keccak256, defaultAbiCoder, toUtf8Bytes } = utils;
 import { solidity, deployContract, MockProvider } from "ethereum-waffle";
@@ -10,6 +10,8 @@ import { expandTo18Decimals, getApprovalDigest } from "./shared/utilities";
 import ERC20 from "../build/ERC20.json";
 
 chai.use(solidity);
+
+const BigNumber = require("bignumber.js");
 
 const TOTAL_SUPPLY = expandTo18Decimals(10000);
 const TEST_AMOUNT = expandTo18Decimals(10);
